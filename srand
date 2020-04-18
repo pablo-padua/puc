@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<string.h>
+#include<math.h>
+
+int main()
+{
+    int i,selection,moeda;
+    srand(time(NULL));
+    printf("Escolha cara(0) ou coroa(1):");
+    scanf("%d",&selection);
+    moeda=rand()%2;
+    if (selection==moeda&&selection==0)
+    {
+        printf("Voce escolheu cara, iniciando programa:\n");
+        for (i=0; i<10; i++)
+        {
+            printf("%d ", rand() % 2);
+            printf("\n");
+        }
+    }
+    else if (selection==moeda&&selection==1)
+    {
+        printf("Voce escolheu coroa, iniciando programa:\n");
+        for (i=0; i<10; i++)
+        {
+            printf("%d ", rand() % 2);
+            printf("\n");
+        }
+    }
+        else
+        {
+            printf("Numero fora de ordem");
+        }
+        return 0;
+        getch();
+    }
+
