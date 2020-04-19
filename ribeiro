@@ -28,6 +28,8 @@
     
 //Codigo CSS
 
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+
 header{width:100%}
 .small-top{ border-bottom: 1px solid white;float: left; width: 100%; background: black}
 .top-head{background: #141517; width: 100%; float: left; height: 100px;}
