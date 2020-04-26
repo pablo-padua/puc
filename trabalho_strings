@@ -1,0 +1,380 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <string.h>
+#include <math.h>
+#include <conio.h>
+
+
+// Atividades AED - lista de strings
+
+void atividade1 ();
+void atividade2 ();
+void atividade3 ();
+void atividade4 ();
+void atividade5 ();
+void atividade6 ();
+void atividade7 ();
+void atividade8 ();
+void atividade9 ();
+void atividade10();
+void menu();
+int main()
+{
+    int opcao;
+    menu();
+    printf("Escolha sua opcao: ");
+    scanf("%d",&opcao);
+    while(opcao!=11)
+    {
+        switch(opcao)
+        {
+        case 1:
+            atividade1();
+            break;
+        case 2:
+            atividade2();
+            break;
+        case 3:
+            atividade3();
+            break;
+
+        case 4:
+            atividade4();
+            break;
+        case 5:
+            atividade5();
+            break;
+        case 6:
+            atividade6();
+            break;
+        case 7:
+            atividade7();
+            break;
+        case 8:
+            atividade8();
+            break;
+        case 9:
+            atividade9();
+            break;
+        case 10:
+            atividade10();
+            break;
+
+        }
+
+        setlocale(LC_ALL,"portuguese");
+        system("PAUSE");
+        menu();
+        printf("Escolha o número da atividade:");
+        scanf("%d",&opcao);
+
+    }
+    system("CLS");
+    printf("FIM DO PROGRAMA!\n");
+    return 0;
+
+}
+
+void menu()
+{
+    setlocale(LC_ALL,"portuguese");
+    system("CLS");
+    printf("---------------------BEM VINDO------------------------\n");
+    printf("-------DIGITE O NÚMERO DA ATIVIDADE DESEJADA:---------\n\n");
+    printf("1 --------ATIVIDADE 01-------------\n");
+    printf("2 --------ATIVIDADE 02-------------\n");
+    printf("3 --------ATIVIDADE 03-------------\n");
+    printf("4 --------ATIVIDADE 04-------------\n");
+    printf("5 --------ATIVIDADE 05-------------\n");
+    printf("6 --------ATIVIDADE 06-------------\n");
+    printf("7 --------ATIVIDADE 07-------------\n");
+    printf("8 --------ATIVIDADE 08-------------\n");
+    printf("9 --------ATIVIDADE 09-------------\n");
+    printf("10 -------ATIVIDADE 10-------------\n");
+    printf("11 ------ SAIR DO PROGRAMA ------\n");
+
+}
+
+void atividade1()
+
+{
+    system("CLS");
+    setlocale(LC_ALL,"portuguese");
+    char palavras[50],maior[50],menor[50],maior1[50],menor1[50];
+    char saida[50]="FIM";
+    printf("Para encerrar o programa digite FIM.\n");
+    gets(palavras);
+    fflush(stdin);
+    strcpy (maior,palavras);
+    strcpy (menor,palavras);
+    strcpy (maior1,palavras);
+    strcpy (menor1,palavras);
+
+    while(strcasecmp(palavras, saida)!=0)
+    {
+        if (strcasecmp (palavras, maior) > 0)
+        {
+            strcpy (maior,palavras);
+        }
+
+
+        if(strcasecmp (palavras, menor) < 0)
+        {
+            strcpy (menor,palavras);
+        }
+
+        if (strlen(palavras)>strlen(maior1))
+        {
+            strcpy (maior1,palavras);
+        }
+
+        if(strlen(palavras)<strlen(menor1))
+        {
+            strcpy (menor1,palavras);
+        }
+
+        fflush(stdin);
+        printf("Digite uma palavra:\n");
+        gets(palavras);
+    }
+    printf("Maior palavra lexicograficamente é %s\n",maior);
+    printf("Menor palavra lexicograficamente é %s\n",menor);
+    printf("A maior palavra é %s.\n",maior1);
+    printf("A menor palavra é %s\n.",menor1);
+}
+
+
+
+
+
+void atividade2()
+{
+    system("CLS");
+    setlocale(LC_ALL,"portuguese");
+
+    char palavra[50];
+    int cont, i;
+
+    printf("Digite uma palavra desejada:");
+    gets(palavra);
+
+    cont=0;
+    for(i=0; i<strlen(palavra); i++)
+    {
+        if(palavra[i]=='A' || palavra[i]=='a')
+        {
+            cont++;
+        }
+    }
+    printf("O numero  de letras A é: %d", cont);
+
+}
+
+
+
+void atividade3()
+{
+
+    system("CLS");
+    setlocale(LC_ALL,"portuguese");
+    char palavra[50];
+    int i;
+    printf("Digite uma palavra desejada:");
+    gets(palavra);
+    for(i=0; i<strlen(palavra); i++)
+    {
+        if(palavra[i]=='A' || palavra[i]=='a')
+        {
+            printf("%i - %c\n", i, (palavra[i]));
+        }
+    }
+
+}
+
+
+
+
+void atividade4()
+{
+
+    system("CLS");
+    setlocale(LC_ALL, "portuguese");
+    char palavra[50],letraa;
+    int pos,cont=0;
+    printf("Digite uma palavra desejada: ");
+    fflush(stdin);
+    gets(palavra);
+    printf("Digite uma letra do alfabeto: \n");
+    scanf("%c",&letraa);
+
+    for (pos=0; palavra[pos] != NULL; pos++)
+    {
+        if(palavra[pos] == letraa)
+        {
+            cont++;
+            printf ("A posição do caractere %c na palavra é de: %i\n",letraa,pos);
+        }
+    }
+    printf("A quantidade de letras %c na palavra digitada é de: %i\n",letraa,cont);
+
+
+    system("pause");
+
+}
+
+void atividade5()
+{
+    system("CLS");
+    setlocale(LC_ALL,"portuguese");
+    char palavra[50],caractere;
+    int posicao, contador;
+    contador = 0;
+    printf("Digite uma palavra: ");
+    fflush(stdin);
+    gets(palavra);
+    printf("Digite um caractere: \n");
+    scanf("%c",&caractere);
+
+    if ((caractere >= 'A') && (caractere <= 'z'))
+    {
+        for (posicao=0; palavra[posicao] != NULL; posicao++)
+        {
+            if(palavra[posicao] == caractere)
+            {
+                contador++;
+                printf ("A posição do caractere %c na palavra é de: %i\n",caractere,posicao);
+            }
+        }
+        printf("A quantidade de letras %c na palavra digitada é de: %i\n",caractere,contador);
+    }
+    else
+    {
+        printf("O caractere digitado é inválido, recomece!\n");
+    }
+
+    system("pause");
+}
+
+void atividade6()
+{
+
+    system("CLS");
+    setlocale(LC_ALL,"portuguese");
+    char string[50];
+    int i, ch=0, num=0, caracteres=0;
+
+    printf("Insira uma palavra qualquer: ");
+    fflush(stdin);
+    gets(string);
+
+    for (i=0; string[i] != NULL; i++)
+    {
+        if ((string[i] >= '0') && string[i] <= '9')
+        {
+            num++;
+        }
+        else
+        {
+            if ((string[i] >= 'A') && (string[i] <= 'z'))
+            {
+                ch++;
+            }
+            else
+            {
+                caracteres++;
+            }
+        }
+    }
+    printf("Há %i letras na palavra %s\n", ch, string);
+    printf("Há %i números na palavra %s\n", num, string);
+    printf("Há %i demais caracteres na palavra %s\n", caracteres, string);
+    system("pause");
+}
+
+void atividade7()
+{
+
+    int x,tam;
+    char nome[30];
+    printf("Digite uma palavra: ");
+    scanf("%c", nome);
+    tam=strlen(nome);
+    printf("\nA palavra inversa é: ");
+           for (x=tam-1; x>=0; x--){
+           printf("%c",nome[x]);
+           printf("\n\n");}
+           system("pause");
+
+}
+
+void atividade8()
+{
+
+    system("CLS");
+    setlocale(LC_ALL,"portuguese");
+    char palavra[50];
+    printf("Digite uma string que contenha espaços em branco: ");
+    fgets(palavra, sizeof(palavra), stdin);
+    int len = strlen(palavra);
+    for (int i = 0, posicao = 0; i < len; i++, posicao++)
+    {
+        if (palavra[posicao] == ' ') posicao++;
+        palavra[i] = palavra[posicao];
+    }
+    printf("A string sem espaços em branco é: %s\n", palavra);
+
+
+}
+void atividade9()
+{
+
+    system("CLS");
+    setlocale(LC_ALL,"portuguese");
+    char palavra[50];
+    int  i,aux=0;
+    printf("Digite uma palavra com multiplos espaços em branco: ");
+    gets(palavra);
+
+    for(i=0; palavra[i]; i++)
+    {
+        palavra[i]=palavra[i+aux];
+
+
+        if(palavra[i]==' ')
+        {
+            aux++;
+            i--;
+        }
+    }
+    printf("Palavra sem os espaços em branco: %s",palavra);
+}
+void atividade10()
+{
+    setlocale(LC_ALL,"Portuguese");
+    char text[50];
+    char p[3];
+
+    int i  = 0;
+    int j  = 0;
+    int t  = 0;
+
+    printf("Digite o texto:");
+    gets(text);
+    printf("Digite a palavra:");
+    gets(p);
+
+
+        while( text[i] != '\0' )
+        {
+            if( text[i++] == p[j] || (j = 0) )
+                j++;
+            if( p[j] == '\0' )
+                printf( "Posição %d - %s\n", i, p ), j=0, t++;
+        }
+
+        printf( "%s%s%s%d%s",
+                "A palavra ",p," repetiu ", t, " vezes.\n" );
+
+
+}
