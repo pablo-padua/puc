@@ -5,8 +5,8 @@
 #include <math.h>
 #include <conio.h>
 
-
-// Atividades AED - lista de strings
+// Se algum código nao funcionar pelo menu, por favor copie o mesmo em um novo projeto do codeblocks.
+// O comentário acima se referem às questões 02,03,08 e 09.
 
 void atividade1 ();
 void atividade2 ();
@@ -38,7 +38,6 @@ int main()
         case 3:
             atividade3();
             break;
-
         case 4:
             atividade4();
             break;
@@ -63,7 +62,6 @@ int main()
 
         }
 
-        setlocale(LC_ALL,"portuguese");
         system("PAUSE");
         menu();
         printf("Escolha o número da atividade:");
@@ -78,10 +76,9 @@ int main()
 
 void menu()
 {
-    setlocale(LC_ALL,"portuguese");
     system("CLS");
     printf("---------------------BEM VINDO------------------------\n");
-    printf("-------DIGITE O NÚMERO DA ATIVIDADE DESEJADA:---------\n\n");
+    printf("-------DIGITE O NUMERO DA ATIVIDADE DESEJADA:---------\n\n");
     printf("1 --------ATIVIDADE 01-------------\n");
     printf("2 --------ATIVIDADE 02-------------\n");
     printf("3 --------ATIVIDADE 03-------------\n");
@@ -135,7 +132,7 @@ void atividade1()
         }
 
         fflush(stdin);
-        printf("Digite uma palavra:\n");
+        printf("Digite uma palavra: ");
         gets(palavras);
     }
     printf("Maior palavra lexicograficamente é %s\n",maior);
@@ -150,6 +147,7 @@ void atividade1()
 
 void atividade2()
 {
+// essa questao 02 está em conflito com o menu interativo, por favor o copie em um novo projeto do codeblocks
     system("CLS");
     setlocale(LC_ALL,"portuguese");
 
@@ -175,7 +173,7 @@ void atividade2()
 
 void atividade3()
 {
-
+// essa questao 03 está em conflito com o menu interativo, por favor o copie em um novo projeto do codeblocks
     system("CLS");
     setlocale(LC_ALL,"portuguese");
     char palavra[50];
@@ -184,13 +182,14 @@ void atividade3()
     gets(palavra);
     for(i=0; i<strlen(palavra); i++)
     {
-        if(palavra[i]=='A' || palavra[i]=='a')
+        if(palavra[i]=='A'||palavra[i]=='a')
         {
-            printf("%i - %c\n", i, (palavra[i]));
+            printf("Posição:%i - letra %c\n", i, (palavra[i]));
         }
     }
-
+    return 0;
 }
+
 
 
 
@@ -310,7 +309,7 @@ void atividade7()
 
 void atividade8()
 {
-
+// essa questao 08 está em conflito com o menu interativo, por favor o copie em um novo projeto do codeblocks
     system("CLS");
     setlocale(LC_ALL,"portuguese");
     char palavra[50];
@@ -328,7 +327,7 @@ void atividade8()
 }
 void atividade9()
 {
-
+// essa questao 09 está em conflito com o menu interativo, por favor o copie em um novo projeto do codeblocks
     system("CLS");
     setlocale(LC_ALL,"portuguese");
     char palavra[50];
