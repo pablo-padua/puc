@@ -1,0 +1,78 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+int main()
+{
+    //Multiplicação entre os dois valores (a,b)
+    setlocale(LC_ALL,"portuguese");
+    int a,b,c,d,e,e2=0,impar=0;
+    printf("Digite o primeiro valor: ");
+    scanf("%d",&a);
+    printf("Digite o segundo valor: ");
+    scanf("%d",&b);
+    c=a*b;
+    printf("A multiplicação entre %d e %d é: %d\n",a,b,c);
+
+
+    //Soma dos números no intervalo (a,b)
+    if (a>b)
+    {
+        c=(a-b)-1;
+        for (d=1; d<=c; d++)
+        {
+            e=(b+d);
+            e2=e+e2;
+            d=d++;
+        }
+        printf("A soma dos números entre %d e %d é: %d\n",a,b,e2);
+    }
+    else if (b>a)
+    {
+        c=(b-a)-1;
+        for (d=1; d<=c; d++)
+        {
+            e=(a+d);
+            e2=e+e2;
+            d=d++;
+        }
+        printf("A soma dos números entre %d e %d é: %d\n",b,a,e2);
+    }
+    else
+    {
+        printf("Não há números entre %d e %d!\n",a,b);
+    }
+
+    //Números ímpares nesse intervalo
+
+    if (a>b)
+    {
+        c=(a-b)-1;
+        for (d=1; d<=c; d++)
+        {
+            e=(b+d);
+            if (e%2==1)
+            {
+                impar++;
+            }
+        }
+        printf("Há %d números ímpares nesse intervalo.",impar);
+    }
+    else if (b>a)
+    {
+        c=(b-a)-1;
+        for (d=1; d<=c; d++)
+        {
+            e=(a+d);
+            if (e%2==1)
+            {
+                impar++;
+            }
+        }
+        printf("Há %d números ímpares nesse intervalo.",impar);
+    }
+    else
+    {
+        printf("Não há números ímpares entre %d e %d!\n",a,b);
+    }
+    return 0;
+}
